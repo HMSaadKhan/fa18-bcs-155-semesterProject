@@ -1,4 +1,5 @@
 $(function () {
+  $("#signupform").hide();
   showHomeData();
   $("#user").on("click", ".btn-danger", deleteData);
 
@@ -15,6 +16,7 @@ $(function () {
 
 
 function addData() {
+   $("#signupform").hide();
   var Name = $("#Name").val();
   var Anime = $("#Anime").val();
   var Type = $("#Type").val();
@@ -49,6 +51,7 @@ function deleteData() {
   });
 }
 function showHomeData() {
+  $("#signupform").hide();
   $.ajax({
     url: "http://localhost:4000/api/merch",
     method: "GET",
@@ -62,10 +65,10 @@ function showHomeData() {
         var rec = response[i];
         temp.append(
           `<a class="nav-link" id="fulldata"><div class="d-flex justify-content-center users" data-id="${rec._id}">
-          <h3><img src="${rec.Image}" alt="image"><p>  ${rec.Name}<p>Price: ${rec.Price} 
+          <h3><img src="${rec.Image}" alt="image"><p>  ${rec.Name}<p>Price: ${rec.Price}</a> 
           <button class="btn btn-danger btn-sm float-right">Delete </button></br>
           <button class="btn btn-warning btn-sm float-right">Update</button></br>
-          </a>`
+          `
           );
       
  
@@ -74,6 +77,7 @@ function showHomeData() {
   });
 }
 function show3DModel() {
+  $("#signupform").hide();
   $.ajax({
     url: "http://localhost:4000/api/merch",
     method: "GET",
@@ -98,6 +102,7 @@ function show3DModel() {
   });
 }
 function showClothing() {
+  $("#signupform").hide();
   $.ajax({
     url: "http://localhost:4000/api/merch",
     method: "GET",
@@ -125,6 +130,7 @@ function showClothing() {
 
 
 function showAcessories() {
+  $("#signupform").hide();
   $.ajax({
     url: "http://localhost:4000/api/merch",
     method: "GET",
@@ -149,6 +155,7 @@ function showAcessories() {
 }
 
 function showData() {
+  $("#signupform").hide();
   var btn = $(this);
   var parentDiv = btn.closest(".users");
   let id = parentDiv.attr("data-id");

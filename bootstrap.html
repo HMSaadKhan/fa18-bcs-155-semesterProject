@@ -9,6 +9,7 @@
     crossorigin="anonymous"></script>
   <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <script src="./ajax.js"></script>
+  <script src="./User.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <link rel="stylesheet" href="./style.css" />
@@ -35,8 +36,8 @@
       <li class="nav-item"><a class="nav-link" id="Acessories">Acessories</a></li>
     </ul>
     <ul class="nav justify-content-end">
-      <li class="nav-item"><a class="nav-link" href="#contact">Login</a></li>
-      <li class="nav-item"><a class="nav-link" href="#about">Signup</a></li>
+      <li class="nav-item"><a class="nav-link" id="login">Login</a></li>
+      <li class="nav-item"><a class="nav-link" id="Signup">Signup</a></li>
     </ul>
   </nav>
 
@@ -92,6 +93,23 @@
     </div>
   </div>
 
+
+  <div id="signupform" class="container  form-group">
+    <label for="">Name</label>
+    <input type="text" class="form-control" name="" id="signupName" aria-describedby="helpId">
+    <label for="">Email</label>
+    <input type="text" class="form-control" name="" id="signupEmail" aria-describedby="helpId">
+    <label for="">Password</label>
+    <input type="text" class="form-control" name="" id="signupPassword" aria-describedby="helpId">
+  </br>
+    <input type="submit" id = "submit" value="Submit">
+    <label for="">Email</label>
+    <input type="text" class="form-control" name="" id="loginEmail" aria-describedby="helpId">
+    <label for="">Password</label>
+    <input type="text" class="form-control" name="" id="loginPassword" aria-describedby="helpId">
+  </br>
+    <input type="submit" id = "login" value="Submit">
+  </div>
 
 
   <!-- Button trigger modal -->
