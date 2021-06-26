@@ -37,7 +37,7 @@
     </ul>
     <ul class="nav justify-content-end">
       <li class="nav-item"><a class="nav-link" id="login">Login</a></li>
-      <li class="nav-item"><a class="nav-link" id="Signup">Signup</a></li>
+      <li class="nav-item  "><a class="nav-link" id="Signup">Signup</a></li>
     </ul>
   </nav>
 
@@ -64,23 +64,20 @@
               placeholder="Name of product">
             <label for="">Anime</label>
             <input type="text" class="form-control" name="" id="Anime" aria-describedby="helpId"
-              placeholder="Name of product">
+              placeholder="Name of Anime">
             <label for="">Type</label>
             <input type="text" class="form-control" name="" id="Type" aria-describedby="helpId"
-              placeholder="Name of product">
+              placeholder="Type of product">
             <label for="">Price</label>
             <input type="text" class="form-control" name="" id="Price" aria-describedby="helpId"
-              placeholder="Name of product">
+              placeholder="Price of product">
             <label for="">Description</label>
             <input type="text" class="form-control" name="" id="Descprition" aria-describedby="helpId"
               placeholder="Name of product">
             <label for="">Image</label>
-            <input type="text" class="form-control" name="" id="Image" aria-describedby="helpId"
-              placeholder="Name of product">
-            <div>
-              <label>Upload profile picture</label>
-              <input type="file" name="profile-file" id="Image" required />
-            </div>
+            <input type="url" class="form-control" name="" id="Image" aria-describedby="helpId"
+              placeholder="Image link of product">
+            
 
 
           </div>
@@ -94,21 +91,29 @@
   </div>
 
 
-  <div id="signupform" class="container  form-group">
+  <div id="signupform" class="container  form-group ">
+    <p class=" p-4 d-flex justify-content-center font-weight-bold">Registeration</p>
+  <div>
     <label for="">Name</label>
-    <input type="text" class="form-control" name="" id="signupName" aria-describedby="helpId">
+    <input type="text" class="form-control col-xs-2" name="" id="signupName" aria-describedby="helpId">
     <label for="">Email</label>
-    <input type="text" class="form-control" name="" id="signupEmail" aria-describedby="helpId">
+    <input type="text" class="form-control col-xs-2" name="" id="signupEmail" aria-describedby="helpId">
     <label for="">Password</label>
-    <input type="text" class="form-control" name="" id="signupPassword" aria-describedby="helpId">
+    <input type="password" class="form-control  " name="" id="signupPassword" aria-describedby="helpId">
+  </div>
+  <div>
   </br>
-    <input type="submit" id = "submit" value="Submit">
+    <input type="submit" class="float-right" id = "submit" value="Submit">
+  </div>
+  </div>
+  <div id="loginform" class="container  form-group">
+    <p class=" p-4 d-flex justify-content-center font-weight-bold">Login</p>
     <label for="">Email</label>
     <input type="text" class="form-control" name="" id="loginEmail" aria-describedby="helpId">
     <label for="">Password</label>
-    <input type="text" class="form-control" name="" id="loginPassword" aria-describedby="helpId">
+    <input type="password" class="form-control" name="" id="loginPassword" aria-describedby="helpId">
   </br>
-    <input type="submit" id = "login" value="Submit">
+    <input class="float-right" type="submit" id = "loginsubmit" value="Submit">
   </div>
 
 
@@ -157,16 +162,7 @@
   </div>
 
 
-  <!-- <div class="d-flex justify-content-center" >
-      <div>
-        <img src="./images/luffyfig.jpg">
-      <a href="bootstrap.html"><p class="text">Luffy Model</p> </a> 
-      </div>
-      <div>
-        <img src="./images/dekukeychain.jpg">
-        <a href="bootstrap.html"><p class="text">Midoriya KeyChain</p> </a>
-      </div>
-    </div> -->
+  
   <div id="footer" class="footer">
 
     <p class="text-white text-center">

@@ -1,5 +1,7 @@
 $(function () {
   $("#signupform").hide();
+  $("#loginform").hide();
+  $(".buybtn").attr("disabled",true);
   showHomeData();
   $("#user").on("click", ".btn-danger", deleteData);
 
@@ -16,7 +18,8 @@ $(function () {
 
 
 function addData() {
-   $("#signupform").hide();
+  $("#signupform").hide();
+    $("#loginform").hide();
   var Name = $("#Name").val();
   var Anime = $("#Anime").val();
   var Type = $("#Type").val();
@@ -51,7 +54,9 @@ function deleteData() {
   });
 }
 function showHomeData() {
+  
   $("#signupform").hide();
+  $("#loginform").hide();
   $.ajax({
     url: "http://localhost:4000/api/merch",
     method: "GET",
@@ -78,6 +83,7 @@ function showHomeData() {
 }
 function show3DModel() {
   $("#signupform").hide();
+  $("#loginform").hide();
   $.ajax({
     url: "http://localhost:4000/api/merch",
     method: "GET",
@@ -91,9 +97,9 @@ function show3DModel() {
         if(rec.Type==="3D Model")
         temp.append(
           `<a class="nav-link" id="fulldata"><div class="d-flex justify-content-center users" data-id="${rec._id}">
-          <h3><img src="${rec.Image}" alt="image"><p>  ${rec.Name}<p>Price: ${rec.Price} 
+          <h3><img src="${rec.Image}" alt="image"><p>  ${rec.Name}<p>Price: ${rec.Price}</a> 
           <button class="btn btn-danger btn-sm float-right">Delete </button></br>
-          <button class="btn btn-warning btn-sm float-right">Update</button></a>`
+          <button class="btn btn-warning btn-sm float-right">Update</button>`
         );
       
  
@@ -103,6 +109,7 @@ function show3DModel() {
 }
 function showClothing() {
   $("#signupform").hide();
+    $("#loginform").hide();
   $.ajax({
     url: "http://localhost:4000/api/merch",
     method: "GET",
@@ -116,9 +123,9 @@ function showClothing() {
         if(rec.Type==="Clothing")
         temp.append(
           `<a class="nav-link" id="fulldata"><div class="d-flex justify-content-center users" data-id="${rec._id}">
-          <h3><img src="${rec.Image}" alt="image"><p>  ${rec.Name}<p>Price: ${rec.Price} 
+          <h3><img src="${rec.Image}" alt="image"><p>  ${rec.Name}<p>Price: ${rec.Price}</a> 
           <button class="btn btn-danger btn-sm float-right">Delete </button></br>
-          <button class="btn btn-warning btn-sm float-right">Update</button></a>`
+          <button class="btn btn-warning btn-sm float-right">Update</button>`
         );
        
        
@@ -131,6 +138,7 @@ function showClothing() {
 
 function showAcessories() {
   $("#signupform").hide();
+    $("#loginform").hide();
   $.ajax({
     url: "http://localhost:4000/api/merch",
     method: "GET",
@@ -144,9 +152,9 @@ function showAcessories() {
         if(rec.Type==="Acessories")
         temp.append(
           `<a class="nav-link" id="fulldata"><div class="d-flex justify-content-center users" data-id="${rec._id}">
-          <h3><img src="${rec.Image}" alt="image"><p>  ${rec.Name}<p>Price: ${rec.Price} 
+          <h3><img src="${rec.Image}" alt="image"><p>  ${rec.Name}<p>Price: ${rec.Price}</a> 
           <button class="btn btn-danger btn-sm float-right">Delete </button></br>
-          <button class="btn btn-warning btn-sm float-right">Update</button></a>`
+          <button class="btn btn-warning btn-sm float-right">Update</button>`
         );
        
       }
@@ -156,6 +164,7 @@ function showAcessories() {
 
 function showData() {
   $("#signupform").hide();
+    $("#loginform").hide();
   var btn = $(this);
   var parentDiv = btn.closest(".users");
   let id = parentDiv.attr("data-id");
@@ -168,13 +177,13 @@ function showData() {
       var temp = $("#user");
       temp.empty();
       temp.append(
-          `<div class="d-flex justify-content-between" data-id="${rec._id}">
+          `<div class="d-flex justify-content-between displaydata" data-id="${rec._id}">
           <div><img src="${rec.Image}" alt="image"></div> 
           <div> <h2>${rec.Name}</h2>
           <div class="text-success"><h1> Rs. ${rec.Price}</div>
           <div> Anime: ${rec.Anime}
           <div><h2> Description: </h2><p>${rec.Description} 
-          <div> <button class="btn btn-warning btn-lg buybtn float-right">Buy</button></br>`
+          <div> <button id="buybtn" class="btn btn-warning btn-lg buybtn float-right">Buy</button></br>`
           );
       $("#footer").addClass("fixed-bottom");
       $("#addbtn").hide();
