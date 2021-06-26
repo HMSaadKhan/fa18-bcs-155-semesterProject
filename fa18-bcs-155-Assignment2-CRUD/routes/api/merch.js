@@ -34,7 +34,7 @@ router.get("/:id", async(req, res)=>{
     } 
  })
  //update
- router.put("/:id", async(req, res)=>{
+ router.put("/:id",auth,admin,validateProduct, async(req, res)=>{
      try {
       let data = await MerchModelData.findById(req.params.id);
       data.Name = req.body.Name;
@@ -51,7 +51,7 @@ router.get("/:id", async(req, res)=>{
   })
  
  //delte
- router.delete("/:id", async(req, res)=>{
+ router.delete("/:id",auth,admin,validateProduct, async(req, res)=>{
      try {
       let data = await MerchModelData.findByIdAndDelete(req.params.id); 
       if(!data)
@@ -63,7 +63,7 @@ router.get("/:id", async(req, res)=>{
      } 
   })
  //insert
- router.put("/", upload.single('product-image'), async(req, res)=>{
+ router.put("/",auth,admin,validateProduct, upload.single('product-image'), async(req, res)=>{
       let data = new MerchModelData();
       data.Name = req.body.Name;
       data.Anime = req.body.Anime;
